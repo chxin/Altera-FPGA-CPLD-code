@@ -1,0 +1,503 @@
+0037:pll_ram_hier_info:02676:1:14=41B22F3C:16=47d21313:|pll_ram
+clk_in => clk_in~0.IN1
+rst => wr_addr[3].ACLR
+rst => wr_addr[2].ACLR
+rst => wr_addr[1].ACLR
+rst => wr_addr[0].ACLR
+rst => wr_addr[4].ACLR
+data_in[0] => data_in[0]~7.IN1
+data_in[1] => data_in[1]~6.IN1
+data_in[2] => data_in[2]~5.IN1
+data_in[3] => data_in[3]~4.IN1
+data_in[4] => data_in[4]~3.IN1
+data_in[5] => data_in[5]~2.IN1
+data_in[6] => data_in[6]~1.IN1
+data_in[7] => data_in[7]~0.IN1
+wr_en => wr_en~0.IN1
+rd_en => rd_en~0.IN1
+rd_addr[0] => rd_addr[0]~4.IN1
+rd_addr[1] => rd_addr[1]~3.IN1
+rd_addr[2] => rd_addr[2]~2.IN1
+rd_addr[3] => rd_addr[3]~1.IN1
+rd_addr[4] => rd_addr[4]~0.IN1
+clk_out <= clk.DB_MAX_OUTPUT_PORT_TYPE
+lock <= pllx2:pllx2_u1.locked
+package_full <= i~1.DB_MAX_OUTPUT_PORT_TYPE
+data_out[0] <= dpram8x32:dpram8x32_u1.q
+data_out[1] <= dpram8x32:dpram8x32_u1.q
+data_out[2] <= dpram8x32:dpram8x32_u1.q
+data_out[3] <= dpram8x32:dpram8x32_u1.q
+data_out[4] <= dpram8x32:dpram8x32_u1.q
+data_out[5] <= dpram8x32:dpram8x32_u1.q
+data_out[6] <= dpram8x32:dpram8x32_u1.q
+data_out[7] <= dpram8x32:dpram8x32_u1.q
+
+
+|pll_ram|pllx2:pllx2_u1
+inclk0 => sub_wire7[0].IN1
+areset => areset~0.IN1
+c0 <= altpll:altpll_component.clk
+locked <= altpll:altpll_component.locked
+
+
+|pll_ram|pllx2:pllx2_u1|altpll:altpll_component
+inclk[0] => pll.CLK
+inclk[1] => pll.CLK1
+areset => pll.ARESET
+clkena[0] => pll.ENA
+clkena[1] => pll.ENA1
+clkena[2] => pll.ENA2
+clkena[3] => pll.ENA3
+clkena[4] => pll.ENA4
+clkena[5] => pll.ENA5
+extclkena[0] => pll.EXTCLKENA
+extclkena[1] => pll.EXTCLKENA1
+extclkena[2] => pll.EXTCLKENA2
+extclkena[3] => pll.EXTCLKENA3
+clk[0] <= pll.CLK
+clk[1] <= pll.CLK1
+clk[2] <= pll.CLK2
+clk[3] <= pll.CLK3
+clk[4] <= pll.CLK4
+clk[5] <= pll.CLK5
+extclk[0] <= <UNC>
+extclk[1] <= <UNC>
+extclk[2] <= <UNC>
+extclk[3] <= <UNC>
+clkbad[0] <= <UNC>
+clkbad[1] <= <UNC>
+enable1 <= <UNC>
+enable0 <= <UNC>
+activeclock <= <UNC>
+clkloss <= <UNC>
+locked <= pll.LOCKED
+scandataout <= <UNC>
+scandone <= <UNC>
+sclkout0 <= <UNC>
+sclkout1 <= <UNC>
+
+
+|pll_ram|dpram8x32:dpram8x32_u1
+data[0] => data[0]~7.IN1
+data[1] => data[1]~6.IN1
+data[2] => data[2]~5.IN1
+data[3] => data[3]~4.IN1
+data[4] => data[4]~3.IN1
+data[5] => data[5]~2.IN1
+data[6] => data[6]~1.IN1
+data[7] => data[7]~0.IN1
+wren => wren~0.IN1
+wraddress[0] => wraddress[0]~4.IN1
+wraddress[1] => wraddress[1]~3.IN1
+wraddress[2] => wraddress[2]~2.IN1
+wraddress[3] => wraddress[3]~1.IN1
+wraddress[4] => wraddress[4]~0.IN1
+rdaddress[0] => rdaddress[0]~4.IN1
+rdaddress[1] => rdaddress[1]~3.IN1
+rdaddress[2] => rdaddress[2]~2.IN1
+rdaddress[3] => rdaddress[3]~1.IN1
+rdaddress[4] => rdaddress[4]~0.IN1
+rden => rden~0.IN1
+clock => clock~0.IN1
+aclr => aclr~0.IN1
+q[0] <= altsyncram:altsyncram_component.q_b
+q[1] <= altsyncram:altsyncram_component.q_b
+q[2] <= altsyncram:altsyncram_component.q_b
+q[3] <= altsyncram:altsyncram_component.q_b
+q[4] <= altsyncram:altsyncram_component.q_b
+q[5] <= altsyncram:altsyncram_component.q_b
+q[6] <= altsyncram:altsyncram_component.q_b
+q[7] <= altsyncram:altsyncram_component.q_b
+
+
+|pll_ram|dpram8x32:dpram8x32_u1|altsyncram:altsyncram_component
+wren_a => altsyncram_7bc1:auto_generated.wren_a
+rden_b => altsyncram_7bc1:auto_generated.rden_b
+data_a[0] => altsyncram_7bc1:auto_generated.data_a[0]
+data_a[1] => altsyncram_7bc1:auto_generated.data_a[1]
+data_a[2] => altsyncram_7bc1:auto_generated.data_a[2]
+data_a[3] => altsyncram_7bc1:auto_generated.data_a[3]
+data_a[4] => altsyncram_7bc1:auto_generated.data_a[4]
+data_a[5] => altsyncram_7bc1:auto_generated.data_a[5]
+data_a[6] => altsyncram_7bc1:auto_generated.data_a[6]
+data_a[7] => altsyncram_7bc1:auto_generated.data_a[7]
+address_a[0] => altsyncram_7bc1:auto_generated.address_a[0]
+address_a[1] => altsyncram_7bc1:auto_generated.address_a[1]
+address_a[2] => altsyncram_7bc1:auto_generated.address_a[2]
+address_a[3] => altsyncram_7bc1:auto_generated.address_a[3]
+address_a[4] => altsyncram_7bc1:auto_generated.address_a[4]
+address_b[0] => altsyncram_7bc1:auto_generated.address_b[0]
+address_b[1] => altsyncram_7bc1:auto_generated.address_b[1]
+address_b[2] => altsyncram_7bc1:auto_generated.address_b[2]
+address_b[3] => altsyncram_7bc1:auto_generated.address_b[3]
+address_b[4] => altsyncram_7bc1:auto_generated.address_b[4]
+clock0 => altsyncram_7bc1:auto_generated.clock0
+aclr0 => altsyncram_7bc1:auto_generated.aclr0
+q_a[0] <= <UNC>
+q_a[1] <= <UNC>
+q_a[2] <= <UNC>
+q_a[3] <= <UNC>
+q_a[4] <= <UNC>
+q_a[5] <= <UNC>
+q_a[6] <= <UNC>
+q_a[7] <= <UNC>
+q_b[0] <= altsyncram_7bc1:auto_generated.q_b[0]
+q_b[1] <= altsyncram_7bc1:auto_generated.q_b[1]
+q_b[2] <= altsyncram_7bc1:auto_generated.q_b[2]
+q_b[3] <= altsyncram_7bc1:auto_generated.q_b[3]
+q_b[4] <= altsyncram_7bc1:auto_generated.q_b[4]
+q_b[5] <= altsyncram_7bc1:auto_generated.q_b[5]
+q_b[6] <= altsyncram_7bc1:auto_generated.q_b[6]
+q_b[7] <= altsyncram_7bc1:auto_generated.q_b[7]
+
+
+|pll_ram|dpram8x32:dpram8x32_u1|altsyncram:altsyncram_component|altsyncram_7bc1:auto_generated
+aclr0 => ram_block1a0.CLR0
+aclr0 => ram_block1a1.CLR0
+aclr0 => ram_block1a2.CLR0
+aclr0 => ram_block1a3.CLR0
+aclr0 => ram_block1a4.CLR0
+aclr0 => ram_block1a5.CLR0
+aclr0 => ram_block1a6.CLR0
+aclr0 => ram_block1a7.CLR0
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[0] => ram_block1a4.PORTAADDR
+address_a[0] => ram_block1a5.PORTAADDR
+address_a[0] => ram_block1a6.PORTAADDR
+address_a[0] => ram_block1a7.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[1] => ram_block1a4.PORTAADDR1
+address_a[1] => ram_block1a5.PORTAADDR1
+address_a[1] => ram_block1a6.PORTAADDR1
+address_a[1] => ram_block1a7.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[2] => ram_block1a4.PORTAADDR2
+address_a[2] => ram_block1a5.PORTAADDR2
+address_a[2] => ram_block1a6.PORTAADDR2
+address_a[2] => ram_block1a7.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+address_a[3] => ram_block1a4.PORTAADDR3
+address_a[3] => ram_block1a5.PORTAADDR3
+address_a[3] => ram_block1a6.PORTAADDR3
+address_a[3] => ram_block1a7.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+address_a[4] => ram_block1a3.PORTAADDR4
+address_a[4] => ram_block1a4.PORTAADDR4
+address_a[4] => ram_block1a5.PORTAADDR4
+address_a[4] => ram_block1a6.PORTAADDR4
+address_a[4] => ram_block1a7.PORTAADDR4
+address_b[0] => ram_block1a0.PORTBADDR
+address_b[0] => ram_block1a1.PORTBADDR
+address_b[0] => ram_block1a2.PORTBADDR
+address_b[0] => ram_block1a3.PORTBADDR
+address_b[0] => ram_block1a4.PORTBADDR
+address_b[0] => ram_block1a5.PORTBADDR
+address_b[0] => ram_block1a6.PORTBADDR
+address_b[0] => ram_block1a7.PORTBADDR
+address_b[1] => ram_block1a0.PORTBADDR1
+address_b[1] => ram_block1a1.PORTBADDR1
+address_b[1] => ram_block1a2.PORTBADDR1
+address_b[1] => ram_block1a3.PORTBADDR1
+address_b[1] => ram_block1a4.PORTBADDR1
+address_b[1] => ram_block1a5.PORTBADDR1
+address_b[1] => ram_block1a6.PORTBADDR1
+address_b[1] => ram_block1a7.PORTBADDR1
+address_b[2] => ram_block1a0.PORTBADDR2
+address_b[2] => ram_block1a1.PORTBADDR2
+address_b[2] => ram_block1a2.PORTBADDR2
+address_b[2] => ram_block1a3.PORTBADDR2
+address_b[2] => ram_block1a4.PORTBADDR2
+address_b[2] => ram_block1a5.PORTBADDR2
+address_b[2] => ram_block1a6.PORTBADDR2
+address_b[2] => ram_block1a7.PORTBADDR2
+address_b[3] => ram_block1a0.PORTBADDR3
+address_b[3] => ram_block1a1.PORTBADDR3
+address_b[3] => ram_block1a2.PORTBADDR3
+address_b[3] => ram_block1a3.PORTBADDR3
+address_b[3] => ram_block1a4.PORTBADDR3
+address_b[3] => ram_block1a5.PORTBADDR3
+address_b[3] => ram_block1a6.PORTBADDR3
+address_b[3] => ram_block1a7.PORTBADDR3
+address_b[4] => ram_block1a0.PORTBADDR4
+address_b[4] => ram_block1a1.PORTBADDR4
+address_b[4] => ram_block1a2.PORTBADDR4
+address_b[4] => ram_block1a3.PORTBADDR4
+address_b[4] => ram_block1a4.PORTBADDR4
+address_b[4] => ram_block1a5.PORTBADDR4
+address_b[4] => ram_block1a6.PORTBADDR4
+address_b[4] => ram_block1a7.PORTBADDR4
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+clock0 => ram_block1a4.CLK0
+clock0 => ram_block1a5.CLK0
+clock0 => ram_block1a6.CLK0
+clock0 => ram_block1a7.CLK0
+data_a[0] => ram_block1a0.PORTADATAIN
+data_a[1] => ram_block1a1.PORTADATAIN
+data_a[2] => ram_block1a2.PORTADATAIN
+data_a[3] => ram_block1a3.PORTADATAIN
+data_a[4] => ram_block1a4.PORTADATAIN
+data_a[5] => ram_block1a5.PORTADATAIN
+data_a[6] => ram_block1a6.PORTADATAIN
+data_a[7] => ram_block1a7.PORTADATAIN
+q_b[0] <= ram_block1a0.PORTBDATAOUT
+q_b[1] <= ram_block1a1.PORTBDATAOUT
+q_b[2] <= ram_block1a2.PORTBDATAOUT
+q_b[3] <= ram_block1a3.PORTBDATAOUT
+q_b[4] <= ram_block1a4.PORTBDATAOUT
+q_b[5] <= ram_block1a5.PORTBDATAOUT
+q_b[6] <= ram_block1a6.PORTBDATAOUT
+q_b[7] <= ram_block1a7.PORTBDATAOUT
+rden_b => ram_block1a0.PORTBRE
+rden_b => ram_block1a1.PORTBRE
+rden_b => ram_block1a2.PORTBRE
+rden_b => ram_block1a3.PORTBRE
+rden_b => ram_block1a4.PORTBRE
+rden_b => ram_block1a5.PORTBRE
+rden_b => ram_block1a6.PORTBRE
+rden_b => ram_block1a7.PORTBRE
+wren_a => ram_block1a0.PORTAWE
+wren_a => ram_block1a1.PORTAWE
+wren_a => ram_block1a2.PORTAWE
+wren_a => ram_block1a3.PORTAWE
+wren_a => ram_block1a4.PORTAWE
+wren_a => ram_block1a5.PORTAWE
+wren_a => ram_block1a6.PORTAWE
+wren_a => ram_block1a7.PORTAWE
+
+
+0038:pll_ram_syn_hier_info:00:1:14=41B22F3E:16=47d21313:0023:.:0:3:14=48041e4b:16=47d21313:0031:dpram8x32.v:027A5:1:14=41B1D852:16=47d21313:// megafunction wizard: %RAM: 2-PORT%
+// GENERATION: STANDARD
+// VERSION: WM1.0
+// MODULE: altsyncram 
+
+// ============================================================
+// File Name: dpram8x32.v
+// Megafunction Name(s):
+// 			altsyncram
+// ============================================================
+// ************************************************************
+// THIS IS A WIZARD-GENERATED FILE. DO NOT EDIT THIS FILE!
+//
+// 4.0 Build 190 1/28/2004 SJ Full Version
+// ************************************************************
+
+
+//Copyright (C) 1991-2004 Altera Corporation
+//Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+//support information,  device programming or simulation file,  and any other
+//associated  documentation or information  provided by  Altera  or a partner
+//under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+//to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+//other  use  of such  megafunction  design,  netlist,  support  information,
+//device programming or simulation file,  or any other  related documentation
+//or information  is prohibited  for  any  other purpose,  including, but not
+//limited to  modification,  reverse engineering,  de-compiling, or use  with
+//any other  silicon devices,  unless such use is  explicitly  licensed under
+//a separate agreement with  Altera  or a megafunction partner.  Title to the
+//intellectual property,  including patents,  copyrights,  trademarks,  trade
+//secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+//support  information,  device programming or simulation file,  or any other
+//related documentation or information provided by  Altera  or a megafunction
+//partner, remains with Altera, the megafunction partner, or their respective
+//licensors. No other licenses, including any licenses needed under any third
+//party's intellectual property, are provided herein.
+
+
+// synopsys translate_off
+`timescale 1 ps / 1 ps
+// synopsys translate_on
+module dpram8x32 (
+	data,
+	wren,
+	wraddress,
+	rdaddress,
+	rden,
+	clock,
+	aclr,
+	q);
+
+	input	[7:0]  data;
+	input	  wren;
+	input	[4:0]  wraddress;
+	input	[4:0]  rdaddress;
+	input	  rden;
+	input	  clock;
+	input	  aclr;
+	output	[7:0]  q;
+
+	wire [7:0] sub_wire0;
+	wire [7:0] q = sub_wire0[7:0];
+
+	altsyncram	altsyncram_component (
+				.wren_a (wren),
+				.aclr0 (aclr),
+				.clock0 (clock),
+				.address_a (wraddress),
+				.address_b (rdaddress),
+				.rden_b (rden),
+				.data_a (data),
+				.q_b (sub_wire0)
+				// synopsys translate_off
+,
+				.wren_b (),
+				.data_b (),
+				.clock1 (),
+				.clocken0 (),
+				.clocken1 (),
+				.aclr1 (),
+				.byteena_a (),
+				.byteena_b (),
+				.addressstall_a (),
+				.addressstall_b (),
+				.q_a ()
+				// synopsys translate_on
+
+);
+	defparam
+		altsyncram_component.intended_device_family = "Stratix",
+		altsyncram_component.operation_mode = "DUAL_PORT",
+		altsyncram_component.width_a = 8,
+		altsyncram_component.widthad_a = 5,
+		altsyncram_component.numwords_a = 32,
+		altsyncram_component.width_b = 8,
+		altsyncram_component.widthad_b = 5,
+		altsyncram_component.numwords_b = 32,
+		altsyncram_component.lpm_type = "altsyncram",
+		altsyncram_component.width_byteena_a = 1,
+		altsyncram_component.outdata_reg_b = "CLOCK0",
+		altsyncram_component.indata_aclr_a = "CLEAR0",
+		altsyncram_component.wrcontrol_aclr_a = "CLEAR0",
+		altsyncram_component.address_aclr_a = "CLEAR0",
+		altsyncram_component.address_reg_b = "CLOCK0",
+		altsyncram_component.rdcontrol_reg_b = "CLOCK0",
+		altsyncram_component.rdcontrol_aclr_b = "CLEAR0",
+		altsyncram_component.address_aclr_b = "CLEAR0",
+		altsyncram_component.outdata_aclr_b = "CLEAR0",
+		altsyncram_component.read_during_write_mode_mixed_ports = "DONT_CARE",
+		altsyncram_component.ram_block_type = "AUTO";
+
+
+endmodule
+
+// ============================================================
+// CNX file retrieval info
+// ============================================================
+// Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
+// Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "2"
+// Retrieval info: PRIVATE: UseDPRAM NUMERIC "1"
+// Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Stratix"
+// Retrieval info: PRIVATE: VarWidth NUMERIC "0"
+// Retrieval info: PRIVATE: WIDTH_WRITE_A NUMERIC "8"
+// Retrieval info: PRIVATE: WIDTH_WRITE_B NUMERIC "8"
+// Retrieval info: PRIVATE: WIDTH_READ_A NUMERIC "8"
+// Retrieval info: PRIVATE: WIDTH_READ_B NUMERIC "8"
+// Retrieval info: PRIVATE: MEMSIZE NUMERIC "256"
+// Retrieval info: PRIVATE: Clock NUMERIC "0"
+// Retrieval info: PRIVATE: rden NUMERIC "1"
+// Retrieval info: PRIVATE: BYTE_ENABLE_A NUMERIC "0"
+// Retrieval info: PRIVATE: BYTE_ENABLE_B NUMERIC "0"
+// Retrieval info: PRIVATE: BYTE_SIZE NUMERIC "8"
+// Retrieval info: PRIVATE: Clock_A NUMERIC "0"
+// Retrieval info: PRIVATE: Clock_B NUMERIC "0"
+// Retrieval info: PRIVATE: REGdata NUMERIC "1"
+// Retrieval info: PRIVATE: REGwraddress NUMERIC "1"
+// Retrieval info: PRIVATE: REGwren NUMERIC "1"
+// Retrieval info: PRIVATE: REGrdaddress NUMERIC "1"
+// Retrieval info: PRIVATE: REGrren NUMERIC "1"
+// Retrieval info: PRIVATE: REGq NUMERIC "0"
+// Retrieval info: PRIVATE: INDATA_REG_B NUMERIC "0"
+// Retrieval info: PRIVATE: WRADDR_REG_B NUMERIC "0"
+// Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "1"
+// Retrieval info: PRIVATE: CLRdata NUMERIC "1"
+// Retrieval info: PRIVATE: CLRwren NUMERIC "1"
+// Retrieval info: PRIVATE: CLRwraddress NUMERIC "1"
+// Retrieval info: PRIVATE: CLRrdaddress NUMERIC "1"
+// Retrieval info: PRIVATE: CLRrren NUMERIC "1"
+// Retrieval info: PRIVATE: CLRq NUMERIC "0"
+// Retrieval info: PRIVATE: BYTEENA_ACLR_A NUMERIC "0"
+// Retrieval info: PRIVATE: INDATA_ACLR_B NUMERIC "0"
+// Retrieval info: PRIVATE: WRCTRL_ACLR_B NUMERIC "0"
+// Retrieval info: PRIVATE: WRADDR_ACLR_B NUMERIC "0"
+// Retrieval info: PRIVATE: OUTDATA_ACLR_B NUMERIC "1"
+// Retrieval info: PRIVATE: BYTEENA_ACLR_B NUMERIC "0"
+// Retrieval info: PRIVATE: enable NUMERIC "0"
+// Retrieval info: PRIVATE: CLOCK_ENABLE_INPUT_A NUMERIC "0"
+// Retrieval info: PRIVATE: CLOCK_ENABLE_OUTPUT_A NUMERIC "0"
+// Retrieval info: PRIVATE: CLOCK_ENABLE_INPUT_B NUMERIC "0"
+// Retrieval info: PRIVATE: CLOCK_ENABLE_OUTPUT_B NUMERIC "0"
+// Retrieval info: PRIVATE: ADDRESSSTALL_A NUMERIC "0"
+// Retrieval info: PRIVATE: ADDRESSSTALL_B NUMERIC "0"
+// Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "2"
+// Retrieval info: PRIVATE: BlankMemory NUMERIC "1"
+// Retrieval info: PRIVATE: MIFfilename STRING ""
+// Retrieval info: PRIVATE: UseLCs NUMERIC "0"
+// Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
+// Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
+// Retrieval info: PRIVATE: INIT_FILE_LAYOUT STRING "PORT_B"
+// Retrieval info: PRIVATE: MEGAFN_PORT_INFO_0 STRING "wren_a;wren_b;rden_b;data_a;data_b"
+// Retrieval info: PRIVATE: MEGAFN_PORT_INFO_1 STRING "address_a;address_b;clock0;clock1;clocken0"
+// Retrieval info: PRIVATE: MEGAFN_PORT_INFO_2 STRING "clocken1;aclr0;aclr1;byteena_a;byteena_b"
+// Retrieval info: PRIVATE: MEGAFN_PORT_INFO_3 STRING "addressstall_a;addressstall_b;q_a;q_b"
+// Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Stratix"
+// Retrieval info: CONSTANT: OPERATION_MODE STRING "DUAL_PORT"
+// Retrieval info: CONSTANT: WIDTH_A NUMERIC "8"
+// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "5"
+// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "32"
+// Retrieval info: CONSTANT: WIDTH_B NUMERIC "8"
+// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "5"
+// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "32"
+// Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
+// Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
+// Retrieval info: CONSTANT: OUTDATA_REG_B STRING "CLOCK0"
+// Retrieval info: CONSTANT: INDATA_ACLR_A STRING "CLEAR0"
+// Retrieval info: CONSTANT: WRCONTROL_ACLR_A STRING "CLEAR0"
+// Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "CLEAR0"
+// Retrieval info: CONSTANT: ADDRESS_REG_B STRING "CLOCK0"
+// Retrieval info: CONSTANT: RDCONTROL_REG_B STRING "CLOCK0"
+// Retrieval info: CONSTANT: RDCONTROL_ACLR_B STRING "CLEAR0"
+// Retrieval info: CONSTANT: ADDRESS_ACLR_B STRING "CLEAR0"
+// Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "CLEAR0"
+// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
+// Retrieval info: CONSTANT: RAM_BLOCK_TYPE STRING "AUTO"
+// Retrieval info: USED_PORT: data 0 0 8 0 INPUT NODEFVAL data[7..0]
+// Retrieval info: USED_PORT: wren 0 0 0 0 INPUT VCC wren
+// Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL q[7..0]
+// Retrieval info: USED_PORT: wraddress 0 0 5 0 INPUT NODEFVAL wraddress[4..0]
+// Retrieval info: USED_PORT: rdaddress 0 0 5 0 INPUT NODEFVAL rdaddress[4..0]
+// Retrieval info: USED_PORT: rden 0 0 0 0 INPUT VCC rden
+// Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL clock
+// Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT GND aclr
+// Retrieval info: CONNECT: @data_a 0 0 8 0 data 0 0 8 0
+// Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
+// Retrieval info: CONNECT: q 0 0 8 0 @q_b 0 0 8 0
+// Retrieval info: CONNECT: @address_a 0 0 5 0 wraddress 0 0 5 0
+// Retrieval info: CONNECT: @address_b 0 0 5 0 rdaddress 0 0 5 0
+// Retrieval info: CONNECT: @rden_b 0 0 0 0 rden 0 0 0 0
+// Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
+// Retrieval info: CONNECT: @aclr0 0 0 0 0 aclr 0 0 0 0
+// Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
+// Retrieval info: GEN_FILE: TYPE_NORMAL dpram8x32.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL dpram8x32.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL dpram8x32.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL dpram8x32.bsf FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL dpram8x32_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL dpram8x32_bb.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL dpram8x32_waveforms.html TRUE
+// Retrieval info: GEN_FILE: 

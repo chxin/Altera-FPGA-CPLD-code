@@ -1,0 +1,7 @@
+0037:pll_ram_hier_info:02676:1:14=41B22F3C:16=47d21313:|pll_ram
+clk_in => clk_in~0.IN1
+rst => wr_addr[3].ACLR
+rst => wr_addr[2].ACLR
+rst => wr_addr[1].ACLR
+rst => wr_addr[0].ACLR
+rst => wr_addr[

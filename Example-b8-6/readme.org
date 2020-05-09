@@ -1,0 +1,47 @@
+Synplify Pro综合流程
+注：本范例同时提供Verilog和VHDL两种语言版本，请读者根据习惯选用不同的源代码进行操作。
+示例编号	Example-b8-6
+相关章节	第8章8.3.3小节
+教学目标	学习Synplify Pro综合流程，体会Synplify Pro综合工具的使用方法与技巧
+补充说明		首先第8.3.3小节本书就是一个完整的Synplify Pro综合流程讲解，每个小标题，就是Synplify Pro综合流程的主要操作步骤
+	“Example-b8-6\Synplify_Pro\源代码”目录下包含Verilog和VHDL两种源代码文件，读者可以根据个人习惯选用其一。目录“Example-b8-6\Synplify_Pro\Verilog”为本例的Verilog源代码对应的完整工程目录，目录“Example-b8-6\Synplify_Pro\VHDL”为本例的VHDL源代码对应的完整工程目录，可以用Synplify Pro打开综合工程，以供参考
+Synplify Pro综合流程的简要操作步骤（即8.3.3小节的每个小标题）	1.	创建工程
+2.	源代码错误检查
+3.	使用RTL View观察编译结果
+4.	使用SCOPE设计综合约束条件
+5.	设置综合优化参数
+6.	综合
+7.	分析综合结果
+使用工程向导建立工作区
+示例编号	Example-b8-6
+相关章节	第8章8.3.4小节
+教学目标	学习使用工程向导建立工作区的方法
+补充说明	可用使用Synplify Pro打开“Example-b8-6\Synplify_Pro”目录下的工作区工程文件“MyWorkspace.prj”以供参考
+使用工程向导建立工作区的简要操作步骤	1.	启动工程向导
+2.	指定需要添加的工程项目，并创建工作区
+
+
+
+
+混合语言工程管理
+示例编号	Example-b8-6
+相关章节	第8章：8.3.4小节
+教学目标	学习混合语言工程管理的方法
+补充说明	可用使用Synplify Pro打开“Example-b8-6\Synplify_Pro\Mix”目录下的“Mix_scr.prj”工程文件以供参考
+混合语言工程管理的简要操作步骤	1.	新建工程“Mix_scr”
+2.	添加Verilog（.v）和VHDL（.vhd）混合资源文件
+3.	指定工程的顶层模块名称
+使用FSM Viewer分析有限状态机
+示例编号	Example-b8-6
+相关章节	第8章：8.3.4小节
+教学目标	学习使用FSM Viewer分析有限状态机的方法
+补充说明	目录“Example-b8-6\Synplify_Pro\Verilog”为本例的Verilog源代码对应的完整工程目录，目录“Example-b8-6\Synplify_Pro\VHDL”为本例的VHDL源代码对应的完整工程目录，可以用Synplify Pro打开综合工程，以供参考。
+使用FSM Viewer分析有限状态机的简要操作步骤	打开工程“ALU_Syn_demo”，启动RTL视图，选择状态机模块“statemachine”，单击 按钮进入状态机层次结构，或者单击鼠标右键，在弹出命令对话框中选择“View FSM”命令
+使用Timing Analyst分析点到点的路径时序
+示例编号	Example-b8-6
+相关章节	第8章：8.3.4小节
+教学目标	学习使用Timing Analyst分析点到点的路径时序的方法
+补充说明	目录“Example-b8-6\Synplify_Pro\Verilog”为本例的Verilog源代码对应的完整工程目录，目录“Example-b8-6\Synplify_Pro\VHDL”为本例的VHDL源代码对应的完整工程目录，可以用Synplify Pro打开综合工程，以供参考。
+使用Timing Analyst分析点到点的路径时序的简要操作步骤	1.	打开前面创建的工程“ALU_Syn_demo”，启动结构视图，单击 按钮，启动Timing Analyst
+2.	自动产生起点到终点间的路径结构图
+
